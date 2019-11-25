@@ -3,6 +3,7 @@ package org.sudoku;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -24,7 +25,7 @@ public class SudokuFunctionalTest {
         };
 
         Sudoku sudoku = new Sudoku();
-        int[][] result = sudoku.solve(gridToSolve);
+        Integer[][] result = sudoku.solve(gridToSolve);
         int[][] expectedGrid = {
                 {8, 5, 6, 3, 7, 1, 2, 4, 9},
                 {2, 9, 1, 4, 8, 6, 5, 7, 3},
@@ -36,6 +37,6 @@ public class SudokuFunctionalTest {
                 {6, 3, 5, 8, 4, 9, 7, 1, 2},
                 {9, 1, 4, 7, 2, 6, 8, 5, 3}
         };
-        assertEquals(expectedGrid, result);
+        assertArrayEquals(expectedGrid, result);
     }
 }
