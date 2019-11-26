@@ -28,4 +28,23 @@ public class Sudoku {
     }
 
 
+    public boolean isExistInCell(int numberToFind, int[][] gridToSolve, int cellIndex) {
+        for(int i=0; i < 3; i++){
+            for(int j=0; j < 3; j++){
+                if(gridToSolve[i][j] == numberToFind) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean isExistInRow(int numberToFind, int[][] gridToSolve, int rowIndex) {
+        for(int i=0; i < gridToSolve[rowIndex].length;i++){
+            if(gridToSolve[rowIndex][i] == numberToFind){
+                return true;
+            }
+        }
+        return false;
+    }
 }
